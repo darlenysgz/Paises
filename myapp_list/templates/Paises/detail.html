@@ -17,7 +17,7 @@
 						{% for ciudad in pais.ciudad_set.all %}
 							<div class="form-control">
 
-								<label for="ciudad{{forloop.counter}}" class="checkbox-inline"><input type = "radio" name = "ciudad" id = "ciudad{{forloop.counter}}" value="{{ciudad.id}}" />{{ciudad.Nombre_Ciudad}}</label>
+								 <li>ciudad.nombre</li>
 							</div>
 							{% endfor %}
 						<input type = "submit" value = "Chequear Ciudad" />
