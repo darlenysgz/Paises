@@ -14,7 +14,7 @@
 					{% if Agregado_Reciente %}
 						<ul class="col-md-12 list-group">
 						{% for pais in Agregado_Reciente %}
-							<li class="list-group-item"><a href = "{% url 'Paises:detail' pais.id %}">{{pais.nombre}}</a></li>
+							<li class="list-group-item"><a href = "{% url 'myapp_list:detail' pais.id %}">{{pais.nombre}}</a></li>
 						{% endfor %}
 						</ul>
 					{% else %}

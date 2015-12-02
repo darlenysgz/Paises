@@ -12,7 +12,7 @@
 					<h1>{{pais.nombre}}</h1>
 					{% if error_message %}<p><strong class="bg-danger">{{ error_message }}</strong></p>{% endif %}
 
-					<form action = "{% url 'Paises:ciudades' pais.id %}" method = "post">
+					<form action = "{% url 'myapp_lists:ciudades' pais.id %}" method = "post">
 						{% csrf_token %}
 						{% for ciudad in pais.ciudad_set.all %}
 							<div class="form-control">
