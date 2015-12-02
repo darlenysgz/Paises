@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="http://tito.neuronageek.com/css/bootstrap.min.css" media="all" />
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>{{ pais.Nombre }}</h1>
+
+					<ul class="list-group">
+					{% for idioma in pais.lenguaje_set.all %}
+					<li class="list-group-item">Lenguaje: {{idioma.Lenguaje}}</li>
+					{% endfor %}
+					{% for ciudad in pais.ciudad_set.all %}
+						<li class="list-group-item">{{ciudad.Nombre_Ciudad}} -- Distrito: {{ciudad.Distrito}} -- Poblacion: {{ciudad.Poblacion}}</li>
+					{% endfor %}
+					</ul>
+
+					<a href="{% url 'Paises:detail' pais.id %}" class="btn btn-primary"> Mostrar Pais Otra Vez?</a>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

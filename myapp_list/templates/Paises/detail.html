@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="http://tito.neuronageek.com/css/bootstrap.min.css" media="all" />
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>{{pais.Nombre}}</h1>
+					{% if error_message %}<p><strong class="bg-danger">{{ error_message }}</strong></p>{% endif %}
+
+					<form action = "{% url 'Paises:ciudades' pais.id %}" method = "post">
+						{% csrf_token %}
+						{% for ciudad in pais.ciudad_set.all %}
+							<div class="form-control">
+
+								<label for="ciudad{{forloop.counter}}" class="checkbox-inline"><input type = "radio" name = "ciudad" id = "ciudad{{forloop.counter}}" value="{{ciudad.id}}" />{{ciudad.Nombre_Ciudad}}</label>
+							</div>
+							{% endfor %}
+						<input type = "submit" value = "Chequear Ciudad" />
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

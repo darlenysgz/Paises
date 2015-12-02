@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<link rel="stylesheet" type="text/css" href="http://tito.neuronageek.com/css/bootstrap.min.css" media="all" />
+	{% load staticfiles %}
+	<link rel="stylesheet" type="text/css" href="{% static '/style.css' %}" />
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<h1>Paises del mundo</h1>
+
+					{% if Agregado_Reciente %}
+						<ul class="col-md-12 list-group">
+						{% for pais in Agregado_Reciente %}
+							<li class="list-group-item"><a href = "{% url 'Paises:detail' pais.id %}">{{pais.Nombre}}</a></li>
+						{% endfor %}
+						</ul>
+					{% else %}
+						<p class="bg-danger">No hay paises.</p>
+					{% endif %}
+					<h1>{{ pais.Nombre }}</h1>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
