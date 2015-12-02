@@ -27,7 +27,7 @@ def ciudades(request, id_pais):
     except (KeyError, ciudad.DoesNotExist):
         return render(request, 'Paises/detail.html', {
             'pais': p,
-            'error_message': "No has hecho ninguna seleccion.",
+            'error_message': "No has seleccionada nada.",
         })
     else:
         ciudad_seleccionada.save()

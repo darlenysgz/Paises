@@ -11,8 +11,6 @@
 				<div class="col-md-12">
 					<h1>{{pais.nombre}}</h1>
 					{% if error_message %}<p><strong class="bg-danger">{{ error_message }}</strong></p>{% endif %}
-
-
 					<form action = "{% url 'myapp_list:ciudades' pais.id %}" method = "post">
 						{% csrf_token %}
 						{% for ciudad in pais.ciudad_set.all %}
@@ -20,7 +18,7 @@
 
 								{% for ci in pais.ciudad_set.all %}
                                    <ul>
-                                       <li>ci.nombre</li>
+                                       <li>nombre</li>
                                    </ul>
                                 {% endfor %}
 							</div>
