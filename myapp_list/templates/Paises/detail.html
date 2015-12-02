@@ -17,10 +17,12 @@
 						{% for ciudad in pais.ciudad_set.all %}
 							<div class="form-control">
 
-								 <li>ciudad.nombre</li>
+								{% for c in pais.ciudad_set.all %}
+                                    <li>c.nombre</li>
+                                {% endfor %}
 							</div>
 							{% endfor %}
-						<input type = "submit" value = "Chequear Ciudad" />
+						<input type = "submit" value = "Ver informacion de la Ciudad" />
 					</form>
 				</div>
 			</div>
