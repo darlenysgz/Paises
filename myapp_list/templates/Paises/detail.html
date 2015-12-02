@@ -9,7 +9,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<h1>{{pais.Nombre}}</h1>
+					<h1>{{pais.nombre}}</h1>
 					{% if error_message %}<p><strong class="bg-danger">{{ error_message }}</strong></p>{% endif %}
 
 					<form action = "{% url 'Paises:ciudades' pais.id %}" method = "post">

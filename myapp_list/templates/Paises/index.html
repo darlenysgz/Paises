@@ -14,13 +14,13 @@
 					{% if Agregado_Reciente %}
 						<ul class="col-md-12 list-group">
 						{% for pais in Agregado_Reciente %}
-							<li class="list-group-item"><a href = "{% url 'Paises:detail' pais.id %}">{{pais.Nombre}}</a></li>
+							<li class="list-group-item"><a href = "{% url 'Paises:detail' pais.id %}">{{pais.nombre}}</a></li>
 						{% endfor %}
 						</ul>
 					{% else %}
 						<p class="bg-danger">No hay paises.</p>
 					{% endif %}
-					<h1>{{ pais.Nombre }}</h1>
+					<h1>{{ pais.nombre }}</h1>
 				</div>
 			</div>
 		</div>

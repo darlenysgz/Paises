@@ -13,14 +13,12 @@
 
 					<ul class="list-group">
 					{% for idioma in pais.lenguaje_set.all %}
-					<li class="list-group-item">Lenguaje: {{idioma.Lenguaje}}</li>
+					<li class="list-group-item">Lenguaje: {{idioma.lenguaje}}</li>
 					{% endfor %}
 					{% for ciudad in pais.ciudad_set.all %}
-						<li class="list-group-item">{{ciudad.Nombre_Ciudad}} -- Distrito: {{ciudad.Distrito}} -- Poblacion: {{ciudad.Poblacion}}</li>
+						<li class="list-group-item">{{ciudad.nombre}} --  Poblacion: {{ciudad.poblacion}}</li>
 					{% endfor %}
 					</ul>
-
-					<a href="{% url 'Paises:detail' pais.id %}" class="btn btn-primary"> Mostrar Pais Otra Vez?</a>
 				</div>
 			</div>
 		</div>
